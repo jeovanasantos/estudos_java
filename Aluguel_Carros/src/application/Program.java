@@ -19,7 +19,7 @@ public class Program {
 
         DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
 
-        System.out.print("Entre com os dados do aluguel");
+        System.out.println("Entre com os dados do aluguel");
         System.out.print("Modelo do carro: ");
         String carModel = sc.nextLine();
         System.out.print("Retirada (dd/MM/yyyy hh:mm): ");
@@ -40,9 +40,9 @@ public class Program {
         rentalService.processInvoice(cr);
 
         System.out.println("FATURA: ");
-        System.out.println("Pagamento basico: " + String.format("%2f",cr.getInvoice().getBasicPayment()));
-        System.out.println("Imposto: " + String.format("%2f", cr.getInvoice().getTax()));
-        System.out.println("Pagamento total: " + String.format("%2f", cr.getInvoice().getTotalPayment()));
+        System.out.println("Pagamento basico: " + String.format("%.2f",cr.getInvoice().getBasicPayment()));
+        System.out.println("Imposto: " + String.format("%.2f", cr.getInvoice().getTax()));
+        System.out.println("Pagamento total: " + String.format("%.2f", cr.getInvoice().getTotalPayment()));
         sc.close();
     }
 }
